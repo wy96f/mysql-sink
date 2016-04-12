@@ -1,0 +1,22 @@
+#定義 Root Logger 的等級
+log4j.rootLogger=DEBUG,consoleAppender
+log4j.logger.back=DEBUG,fileAppender
+log4j.additivity.back=false
+
+#Console Log
+log4j.appender.consoleAppender=org.apache.log4j.ConsoleAppender
+log4j.appender.consoleAppender.layout=org.apache.log4j.PatternLayout
+#定義log的格式
+log4j.appender.consoleAppender.layout.ConversionPattern=%d{yyyy/MM/dd HH:mm:ss} %-5p %m%n
+
+#File Log 檔案方式儲存
+log4j.appender.fileAppender=org.apache.log4j.RollingFileAppender
+#log檔案的位置
+log4j.appender.fileAppender.File=commitTest.log
+#log檔大小
+log4j.appender.fileAppender.MaxFileSize=1KB
+#保留多少log檔以利備份
+log4j.appender.fileAppender.MaxBackupIndex=5
+log4j.appender.fileAppender.layout=org.apache.log4j.PatternLayout
+log4j.appender.fileAppender.layout.ConversionPattern=%d{yyyy/MM/dd HH:mm:ss} %c %-5p %m%n
+
