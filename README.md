@@ -28,4 +28,4 @@ Each event will be wrote to the corresponding table following a custom rule and 
 	mysql1.sinks.ms2.dbmapper.user_channel_status.fields = 4,5,6,7,9,10,11,12,13 
 	mysql1.sinks.ms2.dbmapper.user_channel_status.prepare = insert into user_channel_status (req_time, req_time_long, action, user_id, session, ip, channel_uuid, channel_mode, country_code) values (?, ?, ?, ?, ?, ?, ?, ?, ?)
 	
-Configuration above means that events in which 3th field equaling tcp and 6th field starting with login or logout will be wrote to user_channel_status tables and partitioned by day identified by 5th field.
+Configuration above means that events in which 3th field equaling "tcp" and 6th field starting with "login" or "logout" will be wrote to user_channel_status table and partitioned by day identified by 5th field.
